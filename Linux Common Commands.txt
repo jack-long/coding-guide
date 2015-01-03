@@ -1,0 +1,147 @@
+Linux Common Commands
+-----------------------------------
+Help Syntax:
+command-name --help
+man command-name
+info command-name
+
+$ date
+Sat Jan  3 17:54:11 CST 2015
+
+$ who
+jack     console  Jan  3 11:42 
+jack     ttys000  Jan  3 15:00
+# to see who is using system
+
+$ whoami
+jack
+
+$ who am i
+jack     ttys000  Jan  3 15:00
+
+$ pwd
+/Users/jack/workspace/BashScripts
+
+$ ls
+checksum    test
+
+$ dirs
+~/workspace/BashScripts
+
+$ cat {file}
+# read from file, output to screen.
+
+$ cat > {file}
+# Read from command line, redirect output to file. CTRL+D on newline to End.
+
+$ more {filename}
+# display file on full screen at a time
+
+$ mv {original} {new}
+
+$ ln {file} {newlink}
+# create multiple file copies with link, refers to same file.
+
+$ rm {filename}
+
+$ chmod {u|g|o|a} {+|-} {r|w|x} {filename}
+# Change file access permissions
+
+$ mail
+# Read your mail
+
+$ wc {file}
+      12      34     142 checksum
+# lines, words and characters of file
+
+$ logout (OR press CTRL+D)
+[Process completed]
+
+$ grep 'md5' checksum
+if [ $2 == `md5 $1` ]
+  echo Check md5 Failed!!!
+# Search file for line that match a pattern and returns them
+
+$ sort -n test
+?
+is 
+that
+what 
+when
+where
+1 2 3 4
+10
+23, 40.
+# sort [-r|-n|-nr] {filename}
+# sort the lines in file. -r Reverse, -n Numeric order.
+
+$ tail [-|+]{line number} {filename}
+# To print from last|first lines to the end of given file.
+
+$ head [-n count | -c bytes] {filename}
+# This filter displays the first count lines or bytes of given file.
+
+$ cmp test test2
+test test2 differ: char 42, line 9
+
+$ diff test test2
+9c9
+< 23
+---
+> 23, 40.
+
+$ pr {file}
+# To print file
+
+
+
+Linux Command Related with Process
+-----------------------------------------------
+$ ps
+# To see currently running process
+
+$ kill {PID}
+# To kill process which are created by yourself.
+
+$ kill 0
+# To kill all except shell
+
+$ linux-command &
+# Run command in background
+
+
+
+Redirection of Input / Output
+-----------------------------------------------
+1) Linux-command > filename
+Create new file or overwritten existing file.
+
+2) Linux-command >> filename
+Append to existing file or create new file.
+
+3) Linux-command < filename
+To take input to Linux-command from file instead of key-board.
+
+
+
+Concepts
+------------------------------------------------
+Pip:
+A pipe is nothing but a temporary storage place where the output of one command is stored and then passed as the input for second command. 
+
+Syntax: command1 | command2
+
+Examples:
+$ ls | less
+$ ls | sort
+
+
+Filter:
+If a Linux command accepts its input from the standard input and produces its output on standard output is know as a filter. 
+
+Example:
+Slice line 3 to line 10 from file checksum
+$ tail +3 < checksum | head -n8
+Same as
+$ head -n10 < checksum | tail +3
+
