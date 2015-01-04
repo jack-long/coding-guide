@@ -5,8 +5,6 @@ command-name --help
 man command-name
 info command-name
 
-$ date
-Sat Jan  3 17:54:11 CST 2015
 
 $ who
 jack     console  Jan  3 11:42 
@@ -22,11 +20,11 @@ jack     ttys000  Jan  3 15:00
 $ pwd
 /Users/jack/workspace/BashScripts
 
-$ ls
-checksum    test
-
 $ dirs
 ~/workspace/BashScripts
+
+$ ls [-l]
+checksum    test
 
 $ cat {file}
 # read from file, output to screen.
@@ -47,14 +45,17 @@ $ rm {filename}
 $ chmod {u|g|o|a} {+|-} {r|w|x} {filename}
 # Change file access permissions
 
-$ mail
-# Read your mail
+$ tail [-|+]{line number} {filename}
+# To print from last|first lines to the end of given file.
+
+$ head [-n count | -c bytes] {filename}
+# This filter displays the first count lines or bytes of given file.
 
 $ wc {file}
       12      34     142 checksum
 # lines, words and characters of file
 
-$ logout (OR press CTRL+D)
+$ logout (OR exit OR press CTRL+D)
 [Process completed]
 
 $ grep 'md5' checksum
@@ -75,12 +76,6 @@ where
 # sort [-r|-n|-nr] {filename}
 # sort the lines in file. -r Reverse, -n Numeric order.
 
-$ tail [-|+]{line number} {filename}
-# To print from last|first lines to the end of given file.
-
-$ head [-n count | -c bytes] {filename}
-# This filter displays the first count lines or bytes of given file.
-
 $ cmp test test2
 test test2 differ: char 42, line 9
 
@@ -89,9 +84,6 @@ $ diff test test2
 < 23
 ---
 > 23, 40.
-
-$ pr {file}
-# To print file
 
 
 
@@ -122,7 +114,7 @@ Append to existing file or create new file.
 3) Linux-command < filename
 To take input to Linux-command from file instead of key-board.
 
-
+PS) >&, >>&: Output to file and print on Screen.
 
 Concepts
 ------------------------------------------------
