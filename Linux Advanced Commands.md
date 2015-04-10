@@ -1,11 +1,14 @@
 Linux Advanced Commands
-
+===========================
 1) date
-$ date
-Sat Jan  3 17:54:11 CST 2015
-$ date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
-DATE: 2015-01-04
-TIME: 14:02:52
+------------
+```bash
+date
+# Sat Jan  3 17:54:11 CST 2015
+date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
+# DATE: 2015-01-04
+# TIME: 14:02:52
+```
 
 An operand with a leading plus (`+') sign signals a user-defined format
 string which specifies the format in which to display the date and time.
@@ -16,10 +19,18 @@ fied by the format string.  The format string for the default display is
 ``+%+''.
 
 2) cd: Move
-$cd     go home
-$cd -   go back to the last directory
+-------------
+go home
+```bash
+cd
+```
+go back to the last directory
+```bash
+cd -   
+```
 
 3) Read your mail
+-------------
 $ mail
 No mail for jack
 
